@@ -31,14 +31,20 @@ public class InitiagePage  {
 	public void setEnrolmenteButton(WebElement enrolmenteButton) {EnrolmenteButton = enrolmenteButton;}
 
 	/**************************END***************************************/
+	
+	
+	
 
 	
 	@FindBy(xpath = "(//span[text()='Initiate DOD verification'])[1]")
 	private WebElement DODVerification;
 	public WebElement getDODVerification() {return DODVerification;}
-	public void getDODVerification(WebElement DODVerification) {DODVerification = DODVerification;}
+	public void setDODVerification(WebElement DODVerification) {DODVerification = DODVerification;}
 	
-	
+	@FindBy(xpath = "(//span[text()='Initiate DOD '])[1]")
+	private WebElement temp;
+	public WebElement gettemp() {return temp;}
+	public void settemp(WebElement temp) {temp = temp;}
 	
 	
 	
@@ -162,7 +168,7 @@ public class InitiagePage  {
 	public void hovertoCreateElement() throws InterruptedException {
 	    JavascriptExecutor executor = (JavascriptExecutor) driver;
 	    executor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//span[text()='Create']")));
-	    Thread.sleep(3000);
+	    Thread.sleep(2000);
 		
 	}
 	

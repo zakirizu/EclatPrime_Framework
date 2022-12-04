@@ -15,7 +15,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import Base.BaseTest;
 import Pages.InitiagePage;
 import Pages.Login_Page;
-
+import Pages.VerifyWithDODPage;
 
 
 public class Enrollment_TestCases extends BaseTest {
@@ -23,26 +23,43 @@ WebDriver driver;
 
 
 
-@AfterMethod
-public void closingBrowser() throws InterruptedException {
-	Thread.sleep(2000);
-	driver.quit();
-}
-
-@BeforeMethod
-public void OpenBrowser() throws InterruptedException, IOException {
-	driver = initializeDriver();
-
+@Test(dataProvider = "getData")
+public void HappyFlow_TestCase(HashMap<String, String> input) throws IOException, InterruptedException {
+	
+	Login_Page lp = new Login_Page(driver);
+	lp.logintoApplication();
+	
+	InitiagePage ip = new InitiagePage(driver);
+	ip.hovertoCreateElement();
+	ip.getCreateButton().click();
+	ip.getEnrolmenteButton().click();
+	ip.getSSNTxtBox().sendKeys(input.get("RandomSSN"));
+	ip.getAcntNumTxtBox().sendKeys(input.get("acc"));
+	ip.getFrstNameTextBox().sendKeys(input.get("fname"));
+	ip.getLstNameTextBox().sendKeys(input.get("lname"));
+	ip.getSearchButton().click();
+	ip.getCommnetsTextBox().sendKeys(input.get("comments"));
+	ip.getProceedButton().click();		
+	ip.getGoButton().click();
+	ip.getSubmitButton().click();
+	
+	Assert.assertTrue(ip.getDODVerification().isDisplayed());
+	
+	VerifyWithDODPage dod = new VerifyWithDODPage(driver);
+	dod.getSubmitButton().click();
 	
 	
+	
+	
+	
+	
+	
 }
-
-
 
 
 
 	@Test(dataProvider = "getData")
-	public void HappyFlow_TestCase(HashMap<String, String> input) throws IOException, InterruptedException {
+	public void HappyFlow_TestCase2(HashMap<String, String> input) throws IOException, InterruptedException {
 		
 		Login_Page lp = new Login_Page(driver);
 		lp.logintoApplication();		
@@ -65,7 +82,51 @@ public void OpenBrowser() throws InterruptedException, IOException {
 	}
 	
 	
-	@DataProvider
+	
+	
+	
+	
+	
+	
+	@Test(dataProvider = "getData")
+	public void ValidateEndFlow(HashMap<String, String> input) throws IOException, InterruptedException{
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	@Test(dataProvider = "getData")
+	public void ValdiaMMiltaFLow(HashMap<String, String> input) throws IOException, InterruptedException{
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+@DataProvider
 	public Object[][] getData() throws IOException {
 		List<HashMap<String, String>> data =  getJsonDataReader(System.getProperty("user.dir")+"\\Resources\\TestData.json");
 		return new Object[][]{
@@ -76,6 +137,16 @@ public void OpenBrowser() throws InterruptedException, IOException {
 		
 	}
 
+@AfterMethod
+	public void closingBrowser() throws InterruptedException {
+		Thread.sleep(1000);
+		driver.quit();
+	}
+
+@BeforeMethod
+	public void OpenBrowser() throws InterruptedException, IOException {
+		driver = initializeDriver();
+	}
 
 	
 	

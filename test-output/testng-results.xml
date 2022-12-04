@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-04T21:55:59 IST" name="test" finished-at="2022-12-04T21:56:21 IST" duration-ms="22109">
+  <suite started-at="2022-12-04T23:04:04 IST" name="Default suite" finished-at="2022-12-04T23:04:26 IST" duration-ms="21548">
     <groups>
     </groups>
-    <test started-at="2022-12-04T21:55:59 IST" name="Enrollment Test Cases" finished-at="2022-12-04T21:56:21 IST" duration-ms="22109">
+    <test started-at="2022-12-04T23:04:04 IST" name="Default test" finished-at="2022-12-04T23:04:26 IST" duration-ms="21548">
       <class name="TestCases.Enrollment_TestCases">
-        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:TestCases.Enrollment_TestCases@77128536]" started-at="2022-12-04T21:55:59 IST" name="OpenBrowser" finished-at="2022-12-04T21:56:01 IST" duration-ms="1931" status="PASS">
+        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:TestCases.Enrollment_TestCases@a38c7fe]" started-at="2022-12-04T23:04:05 IST" name="OpenBrowser" finished-at="2022-12-04T23:04:07 IST" duration-ms="2699" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-        <test-method signature="HappyFlow_TestCase(java.util.HashMap)[pri:0, instance:TestCases.Enrollment_TestCases@77128536]" started-at="2022-12-04T21:56:01 IST" name="HappyFlow_TestCase" data-provider="getData" finished-at="2022-12-04T21:56:19 IST" duration-ms="17642" status="PASS">
+        <test-method signature="HappyFlow_TestCase(java.util.HashMap)[pri:0, instance:TestCases.Enrollment_TestCases@a38c7fe]" started-at="2022-12-04T23:04:07 IST" name="HappyFlow_TestCase" data-provider="getData" finished-at="2022-12-04T23:04:25 IST" duration-ms="17242" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{acc=2222, fname=Alpha, lname=Paan, comments=Autoamtion Test Comments 01 From Json, ssn=1626}]]>
+                <![CDATA[{acc=2222, fname=Alpha, lname=Paan, comments=Autoamtion Test Comments 01 From Json, ExistingSSN=2345, RandomSSN=1626, NotExisitntSSN=1626}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HappyFlow_TestCase -->
-        <test-method is-config="true" signature="closingBrowser()[pri:0, instance:TestCases.Enrollment_TestCases@77128536]" started-at="2022-12-04T21:56:19 IST" name="closingBrowser" finished-at="2022-12-04T21:56:21 IST" duration-ms="2303" status="PASS">
+        <test-method is-config="true" signature="closingBrowser()[pri:0, instance:TestCases.Enrollment_TestCases@a38c7fe]" started-at="2022-12-04T23:04:25 IST" name="closingBrowser" finished-at="2022-12-04T23:04:26 IST" duration-ms="1198" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingBrowser -->
       </class> <!-- TestCases.Enrollment_TestCases -->
-    </test> <!-- Enrollment Test Cases -->
-  </suite> <!-- test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

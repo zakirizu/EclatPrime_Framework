@@ -9,7 +9,7 @@ public class ExtentReporterNG {
 	
 	public static ExtentReports getReportObject() {
 		//String path = System.getProperty("user.dir"+"//reports//index.html");
-		String path  = "C:\\Work\\EclatPrime_Framework\\reports\\index.html";
+		String path  = System.getProperty("user.dir")+"\\reports\\Emailable_Report.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Military Assist Automation Results");
 		reporter.config().setDocumentTitle("Eclat Prime");

@@ -42,14 +42,20 @@ public static WebDriver initializeDriver() throws IOException {
 	browserName 	= prop.getProperty("browser");
 	url 			= prop.getProperty("url");
 	Pegaurl			= prop.getProperty("Pegaurl");
+	
 	//timeout			= (int) prop.get("timeout");
 	if(browserName.equals("chrome"))
-	{System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();}
+	{
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		}
 	
 	else if(browserName.equals("edge")){
+		
 	System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\Drivers\\msedgedriver.exe");
-		driver = new InternetExplorerDriver();}
+		driver = new InternetExplorerDriver();
+		
+	}
 	
 	else if(browserName.equals("firefox")){
 		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
@@ -60,7 +66,7 @@ public static WebDriver initializeDriver() throws IOException {
 		System.out.println("Please give the Proper Browser Name In  Resources->GlobalData.Properties Folder ");}
 	
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	return driver;
 	
 }
