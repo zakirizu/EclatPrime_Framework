@@ -8,6 +8,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
 import Base.BaseTest;
 import Pages.InitiagePage;
 import Pages.Login_Page;
@@ -16,6 +20,8 @@ import Pages.Login_Page;
 
 public class Enrollment_TestCases extends BaseTest {
 WebDriver driver;	
+
+
 
 @AfterMethod
 public void closingBrowser() throws InterruptedException {
@@ -26,14 +32,18 @@ public void closingBrowser() throws InterruptedException {
 @BeforeMethod
 public void OpenBrowser() throws InterruptedException, IOException {
 	driver = initializeDriver();
+
+	
+	
 }
 
 
 
 
-	@Test(dataProvider = "getData")
-	public void HappyFlow_TestCase2(HashMap<String, String> input) throws IOException, InterruptedException {
 
+	@Test(dataProvider = "getData")
+	public void HappyFlow_TestCase(HashMap<String, String> input) throws IOException, InterruptedException {
+		
 		Login_Page lp = new Login_Page(driver);
 		lp.logintoApplication();		
 		InitiagePage init = new InitiagePage(driver);

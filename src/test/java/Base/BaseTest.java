@@ -84,10 +84,10 @@ return data;
 /**************************************************
  ***************Take Screen Shot on Failure*******
  *************************************************/
-public String getScreenShot(String TestCaseName) throws IOException{	
-TakesScreenshot ts 	= (TakesScreenshot)driver;
-File source 		= ts.getScreenshotAs(OutputType.FILE);
-File Destination	= new File(System.getProperty("user.dir")+"\\ScreenShots"+TestCaseName+".png");
+public static String getScreenShot(String TestCaseName,WebDriver driver) throws IOException{	
+TakesScreenshot ts 		= (TakesScreenshot)driver;
+File source 			= ts.getScreenshotAs(OutputType.FILE);
+File Destination		= new File(System.getProperty("user.dir")+"\\ScreenShots"+TestCaseName+".png");
 FileUtils.copyFile(source, Destination);
 return System.getProperty("user.dir")+"\\ScreenShots"+TestCaseName+".png";
 }
