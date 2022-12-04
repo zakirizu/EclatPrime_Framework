@@ -29,7 +29,11 @@ public static String browserName;
 public static String url;
 public static String Pegaurl;
 public static int timeout;
-	
+
+
+/**************************************************
+ ***************Browser Intitilization*************
+ *************************************************/
 public static WebDriver initializeDriver() throws IOException {
 
 	Properties prop 	= new Properties();
@@ -39,29 +43,21 @@ public static WebDriver initializeDriver() throws IOException {
 	url 			= prop.getProperty("url");
 	Pegaurl			= prop.getProperty("Pegaurl");
 	//timeout			= (int) prop.get("timeout");
-	
-	
-	
 	if(browserName.equals("chrome"))
-	{
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-	}
+	{System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();}
 	
 	else if(browserName.equals("edge")){
-		System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\Drivers\\msedgedriver.exe");
-			driver = new InternetExplorerDriver();
-	}
+	System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\Drivers\\msedgedriver.exe");
+		driver = new InternetExplorerDriver();}
 	
 	else if(browserName.equals("firefox")){
 		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-	}
+			driver = new ChromeDriver();}
 	
 	else
 	{
-		System.out.println("Please give the Proper Browser Name In  Resources->GlobalData.Properties Folder ");
-	}
+		System.out.println("Please give the Proper Browser Name In  Resources->GlobalData.Properties Folder ");}
 	
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -69,10 +65,14 @@ public static WebDriver initializeDriver() throws IOException {
 	
 }
 
+
+
+/**************************************************
+ ***************Read JSon Data********************
+ *************************************************/
 public static List<HashMap<String, String>> getJsonDataReader(String filePath) throws IOException{
 //Read Json String 	
 String jsconContent = FileUtils.readFileToString(new File(filePath));
-
 //String to HashMap -- can be done by using jackson Databid Dependency
 ObjectMapper mapper 				 = new ObjectMapper();
 List<HashMap<String,String>>	data = mapper.readValue(jsconContent, new TypeReference<List<HashMap<String,String>>>() {});
@@ -81,16 +81,15 @@ return data;
 }
 
 
-public void getScreenShot(String TestCaseName) throws IOException
-{
-	
+/**************************************************
+ ***************Take Screen Shot on Failure*******
+ *************************************************/
+public String getScreenShot(String TestCaseName) throws IOException{	
 TakesScreenshot ts 	= (TakesScreenshot)driver;
 File source 		= ts.getScreenshotAs(OutputType.FILE);
 File Destination	= new File(System.getProperty("user.dir")+"\\ScreenShots"+TestCaseName+".png");
 FileUtils.copyFile(source, Destination);
 return System.getProperty("user.dir")+"\\ScreenShots"+TestCaseName+".png";
-
-
 }
 	
 
