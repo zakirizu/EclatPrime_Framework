@@ -1,0 +1,23 @@
+[
+
+{
+"ssn"			:"1626",
+"acc"			:"2222",
+"fname"		:"Alpha",
+"lname"		:"Paan",
+"comments"		:"Autoamtion Test Comments 01 From Json"
+},
+
+
+{
+"ssn"			:"0808",
+"acc"			:"3333",
+"fname"		:"Beta",
+"lname"		:"Swan",
+"comments"		:"Autoamtion Test Comments 02 From Json"
+}
+
+
+
+]
+

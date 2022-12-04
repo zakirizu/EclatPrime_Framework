@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="false"   name="test">
+
+  <test thread-count="5" name="Enrollment Test Cases">
+    <classes>
+      <class name="TestCases.Enrollment_TestCases"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+    <test thread-count="5" name="DeEnrollment Test Cases">
+    <classes>
+      <class name="TestCases.DeEnrollment_TestCases"/>
+    </classes>
+  </test> <!-- Test -->
+  
+
+  
+  
+  
+  
+</suite> <!-- Suite -->
