@@ -5,8 +5,8 @@
     <classes>
       <class name="TestCases.Enrollment_TestCases">
         <methods>
-          <include name="HappyFlow_TestCase2" invocation-numbers="0"/>
           <include name="closingBrowser"/>
+          <include name="HappyFlow_TestCase" invocation-numbers="0"/>
           <include name="OpenBrowser"/>
         </methods>
       </class> <!-- TestCases.Enrollment_TestCases -->
