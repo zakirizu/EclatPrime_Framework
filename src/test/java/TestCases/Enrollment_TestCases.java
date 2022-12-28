@@ -47,13 +47,7 @@ public void HappyFlow_TestCase(HashMap<String, String> input) throws IOException
 	
 	VerifyWithDODPage dod = new VerifyWithDODPage(driver);
 	dod.getSubmitButton().click();
-	
-	
-	
-	
-	
-	
-	
+
 }
 
 
