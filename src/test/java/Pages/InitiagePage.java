@@ -27,6 +27,7 @@ public class InitiagePage  {
 	 ******************************************************************/
 	@FindBy(xpath = "//span[text()='Enrollment']")
 	private WebElement EnrolmenteButton;
+	
 	public WebElement getEnrolmenteButton() {return EnrolmenteButton;}
 	public void setEnrolmenteButton(WebElement enrolmenteButton) {EnrolmenteButton = enrolmenteButton;}
 
